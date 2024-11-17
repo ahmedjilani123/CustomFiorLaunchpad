@@ -1,0 +1,27 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+     xmlns:form="sap.ui.layout.form"
+>
+  
+   <form:SimpleForm >
+<form:content>
+<Label text="Name"></Label>
+<Input required="true"></Input>
+<Label text="Email"></Label>
+<Input type="Email" required="true"></Input>
+<Label text="Password"></Label>
+<Input type="Password" required="true"></Input>
+<Label text="Confirm Password"></Label>
+<Input type="Password" required="true"></Input>
+</form:content>
+
+</form:SimpleForm>
+<HBox justifyContent="End">
+<ToggleButton text="Login" pressed="true" class="sapUiSmallMarginEnd" press="addContentInPanel"/>
+<Button text="Submit" type="Emphasized"></Button>
+</HBox>
+                
+              
+</core:FragmentDefinition>

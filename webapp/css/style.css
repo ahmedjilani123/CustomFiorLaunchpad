@@ -1,0 +1,309 @@
+.MainHBOXDiv{
+  width:auto !important;
+ border-radius: 8px;
+ cursor:  pointer !important;
+ margin-top: 1rem;
+ overflow-wrap: break-word !important;
+ margin-left: 2.25rem !important;
+ margin-right: 2.25rem !important;
+ box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.19) !important;
+background-image: linear-gradient(to right,#d5baff,#bcf0f2);
+}
+
+
+.sapUiSizeCompact .sapFShellBar{
+  top:0;
+  position: sticky;
+  border-top: 3px solid !important;
+  border-bottom: 3px solid !important;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19) !important;
+  border-image: linear-gradient(to right, SteelBlue, orchid) 1 !important;
+  background-image: linear-gradient(90deg, #e3ffe7 0%, rgba(195, 245, 255, 1) 100%) !important;
+}
+.sapMPageWithFloatingFooter>.sapMPageFooter {
+  margin-bottom: 3.5rem !important;
+}
+.sapMLIBActionable .sapMText{
+  color: #e4e6ed;
+  cursor: pointer !important;
+  display: flex !important;
+  justify-content: unset !important;
+  position: absolute !important;
+  top: 127px !important;
+  margin-left: 17px !important;
+}
+.sapMLIB{
+  margin-bottom: -5px !important;
+}
+.sapFCardHeader{
+  background-image: linear-gradient(to right,#e3ffe7 ,#92effdd9) !important;
+}
+.sapFCard {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.19) !important;
+  background-image: linear-gradient(to right,#e3ffe7,#92effdd9) !important;
+}
+
+
+/* login page css */
+.sing_img_in{
+    margin-top:-4rem;
+}
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+:root{
+    --white-color: #ffffff;
+    --white-color-hover: #f1f1f1;
+    --black-color: #0f1419;
+    --focus-color: #f45936;
+    --alternative-color: #6d4b40;
+    --bg-color: #f45936;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2{
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+button{
+    border: none;
+    background: none;
+    font-family: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+#mainLogin{
+    font-family: 'Sora', sans-serif;
+    position: relative;
+    color: var(--white-color);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    transition: background-color 1s ease-in-out;
+}
+
+#mainLogin::before{
+    content: '';
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(0, 0, 0, .35) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 0;
+}
+
+.container{
+    position: relative;
+    background-color: rgba(0, 0, 0, .35);
+    width: 800px;
+    height: 350px;
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    z-index: 1;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabs,
+.primary,
+.secondary{
+    padding: 7px 14px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: .2s ease-in-out;
+}
+
+.tabs{
+    background-color: var(--white-color);
+    color: var(--black-color);
+    border: 1px solid var(--white-color);
+}
+
+.tabs:hover{
+    color: var(--white-color);
+    background-color: transparent;
+}
+
+.primary{
+    background-color: var(--focus-color);
+    color: var(--white-color);
+    border: 1px solid var(--focus-color);
+}
+
+.primary:hover{
+    color: var(--focus-color);
+    background-color: transparent;
+}
+
+.secondary{
+    background-color: var(--alternative-color);
+    color: var(--white-color);
+    border: 1px solid var(--alternative-color);
+}
+
+.secondary:hover{
+    color: var(--alternative-color);
+    background-color: transparent;
+}
+
+.div_container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white-color);
+    height: 500px;
+    width: 350px;
+    left: 3.5rem;
+    padding: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: left .5s ease-in-out;
+}
+
+.div_box{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease-in-out;
+}
+
+.div_box div{
+    height: 100%;
+    color: var(--black-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.div_box div h3{
+    padding-left: 10px;
+    font-size: 22px;
+    border-left: 3px solid var(--focus-color);
+    margin-bottom: 10px;
+}
+
+.sign_up_div div h3{
+    border-left: 3px solid var(--alternative-color);
+}
+
+.div_box div input{
+    padding: 10px 15px;
+    font-size: 17px;
+    border: 1px solid var(--black-color);
+    border-radius: 10px;
+}
+
+.div_box div a{
+    font-size: 14px;
+    color: var(--black-color);
+    text-decoration: none;
+}
+
+.div_box div a:hover{
+    color: var(--focus-color);
+    text-decoration: underline;
+}
+
+.sign_in_div{
+    top: 0;
+}
+
+.sign_up_div{
+    top: 100%;
+}
+
+.div_slide .div_container{
+    left: 50%;
+}
+
+.div_slide .sign_up_div{
+    top: 0;
+}
+
+.div_slide .sign_in_div{
+    top: 100%;
+}
+
+@media screen and (max-width: 700px){
+    .container{
+        margin: 25px;
+        padding: 25px;
+        align-items: flex-start;
+        height: 500px;
+        gap: 15px;
+    }
+
+    .box h2{
+        display: none;
+    }
+
+    .box{
+        max-width: 80vw;
+        width: 100%;
+        padding: 0;
+        align-items: stretch;
+    }
+
+    .div_container{
+        width: 500px;
+        max-width: 80vw;
+        height: 450px;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        margin-top: 60px;
+    }
+
+    .div_box{
+        padding: 50px 25px;
+    }
+
+    .div_box div{
+        text-align: left;
+        padding: 25px;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .primary,
+    .secondary,
+    .tabs{
+        font-size: 15px;
+        padding: 5px 20px;
+    }
+
+    .div_box div h3{
+        font-size: 20px;
+    }
+
+    .div_slide .div_container{
+        left: auto;
+    }
+}
+

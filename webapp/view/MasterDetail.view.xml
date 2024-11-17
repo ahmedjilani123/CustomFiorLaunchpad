@@ -1,0 +1,207 @@
+<mvc:View
+    controllerName="sap.ad.advlauchpad.controller.MasterDetail"
+    xmlns="sap.m"
+    xmlns:u="sap.ui.unified"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:tnt="sap.tnt"
+    xmlns:fs="sap.f"
+    height="100%"
+    xmlns:cards="sap.f.cards"
+>
+    <fs:ShellBar homeIcon="{Img>/im}/images/Daffodils.png" showNavButton="true" navButtonPressed="HistoryBack">
+        <fs:profile>
+            <Avatar
+                initials="AD"
+                active="true"
+                press="avtarpress"
+            />
+        </fs:profile>
+    </fs:ShellBar>
+
+    <SplitApp
+        id="SplitAppDemo"
+        initialDetail="detail"
+        initialMaster="master"
+    >
+        <masterPages>
+            <Page
+                showHeader="true"
+                backgroundDesign="List"
+            >
+                <customHeader>
+                    <Bar>
+                        <contentMiddle>
+                            <SearchField />
+                        </contentMiddle>
+                    </Bar>
+                </customHeader>
+                <content>
+                    <List items="{AppDataM>/app}">
+                        <items>
+                            <ObjectListItem
+                                type="Active"
+                                press="AppHandlerPress"
+                                navigated="true"
+                                intro="{AppDataM>appName}"
+                            />
+                        </items>
+                    </List>
+                </content>
+            </Page>
+        </masterPages>
+        <detailPages>
+            <Page
+                id="details"
+                title="Detail"
+                floatingFooter="true"
+                enableScrolling="true"
+            >
+                <content>
+                    <Panel expandable="true" expanded="true" expandAnimation="true" 
+                        headerText="General Information" 
+                        width="auto"
+                        class="sapUiSmallMargin"
+                    >
+                        <content>
+                            <f:SimpleForm
+                                editable="false"
+                                layout="ResponsiveGridLayout"
+                                labelSpanXL="4"
+                                labelSpanL="4"
+                                labelSpanM="4"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="1"
+                                emptySpanL="1"
+                                emptySpanM="1"
+                                emptySpanS="0"
+                                columnsXL="1"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false" 
+                            >
+                                <f:content>
+                                    <Label text="Name" />
+                                    <Title text="{UserDataM>/userName}" />
+                                    <Label text="Email" />
+                                    <Title text="{UserDataM>/userEmail}" />
+                                    <Label text="Password" />
+                                    <Title text="*******" />
+                                </f:content>
+                            </f:SimpleForm>
+                        </content>
+                    </Panel>
+                    <Panel
+                        headerText="Application Information"
+                        width="auto" expanded="true" expandable="true" expandAnimation="true"
+                        class="mainPanelClass sapUiSmallMargin "
+                    >
+                        <content>
+                            <HBox justifyContent="SpaceAround" class="genericHBox" wrap="Wrap">
+                                <GenericTile
+                                    frameType="OneByOne"
+                                    header="{MasterDetailM>/appName}"
+                                    class="sapUiLargeMarginTop"
+                                >
+                                    <TileContent footer="{MasterDetailM>/appDesc}">
+                                        <ImageContent
+                                            src="{MasterDetailM>/appImage}"
+                                        />
+                                    </TileContent>
+                                </GenericTile>
+
+                                <f:SimpleForm
+                                    editable="false"
+                                    class="formgeneric"
+                                    layout="ResponsiveGridLayout"
+                                    labelSpanXL="4"
+                                    labelSpanL="4"
+                                    labelSpanM="4"
+                                    labelSpanS="12"
+                                    adjustLabelSpan="false"
+                                    emptySpanXL="1"
+                                    emptySpanL="1"
+                                    emptySpanM="1"
+                                    emptySpanS="0"
+                                    columnsXL="1"
+                                    columnsL="1"
+                                    columnsM="1"
+                                    singleContainerFullSize="false"
+                                >
+                                    <f:content>
+                                        <Label
+                                            text="App Name"
+                                            required="true"
+                                        />
+                                        <Input value="{MasterDetailM>/appName}" editable="{uploadM>/uploader}" />
+                                        <Label
+                                            text="App Description"
+                                            required="true"
+                                        />
+                                        <Input value="{MasterDetailM>/appDesc}"  editable="{uploadM>/uploader}" />
+                                        <Label
+                                            text="App Image"
+                                            required="true"
+                                        />
+                                        <u:FileUploader
+                                            width="100%"
+                                            name="myFileUpload"
+                                            uploadUrl="upload/"
+                                            tooltip="Upload your file to the local server"
+                                            uploadComplete="handleUploadComplete"
+                                            change="handleValueChange"
+                                            typeMissmatch="handleTypeMissmatch"
+                                            style="Emphasized"
+                                            fileType="png,jpeg"
+                                            enabled="{uploadM>/uploader}"
+                                            placeholder="Choose a file for Upload..."
+                                        >
+                                            <u:parameters>
+                                                <u:FileUploaderParameter
+                                                    name="Accept-CH"
+                                                    value="Viewport-Width"
+                                                />
+                                                <u:FileUploaderParameter
+                                                    name="Accept-CH"
+                                                    value="Width"
+                                                />
+                                                <u:FileUploaderParameter
+                                                    name="Accept-CH-Lifetime"
+                                                    value="86400"
+                                                />
+                                            </u:parameters>
+                                        </u:FileUploader>
+                                        <Label
+                                            text="App ID"
+                                            required="true"
+                                        />
+                                        <Input value="{MasterDetailM>/appID}" editable="{uploadM>/uploader}" />
+                                        <CheckBox text="Pin" editable="{uploadM>/uploader}" selected="{MasterDetailM>/appPin}"></CheckBox>
+                                    </f:content>
+                                </f:SimpleForm>
+                            </HBox>
+                        </content>
+                    </Panel>
+                </content>
+                <footer>
+                    <OverflowToolbar id="footerMs">
+                     <Button icon="sap-icon://decline" type="Reject" visible="{uploadM>/uploader}" press="CancelUpdateDataMain"></Button>
+                       
+                        <ToolbarSpacer />
+                        <Button
+                            type="Emphasized"
+                            text="Edit"
+                            press="EditHandlerPress"
+                        />
+                        <Button
+                            type="Ghost"
+                            text="Delete"
+                            press="DeleteMainAppDetailPress"
+                        />
+                    </OverflowToolbar>
+                </footer>
+            </Page>
+        </detailPages>
+    </SplitApp>
+</mvc:View>

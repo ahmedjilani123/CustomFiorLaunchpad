@@ -1,0 +1,29 @@
+{
+    "app":[
+        {  
+             "userID":100123,
+            "appName":"Conference Room",
+            "appDesc":"Manage Conference Schedules",
+            "appImage":"./images/longimg.jpeg",
+            "appID":"healthhkhkase",
+            "appPin":true
+        },
+        {  
+            "userID":100123,
+           "appName":"Health",
+           "appDesc":"Memory management",
+           "appImage":"./images/longimg.jpeg",
+           "appID":"heasdf",
+           "appPin":true
+       },
+       {  
+        "userID":100123,
+       "appName":"Conference Room",
+       "appDesc":"Manage Conference Schedules",
+       "appImage":"./images/longimg.jpeg",
+       "appID":"healtdfe",
+       "appPin":false
+   }
+        
+    ]
+}

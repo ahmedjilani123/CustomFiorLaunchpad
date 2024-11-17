@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+     xmlns:f="sap.ui.layout.form"
+>
+  
+            <List items="{AppDataMPage>/Dapp}" headerText="All Apps"  >
+              	<CustomListItem>
+			<HBox>
+			    <CheckBox selected="{AppDataMPage>appPin}" select="MainPageDialogCheckBox"></CheckBox>
+					
+				<Text text="{AppDataMPage>appName}" class="sapUiTinyMarginTop"/>
+			</HBox>
+		</CustomListItem>
+            </List>
+</core:FragmentDefinition>

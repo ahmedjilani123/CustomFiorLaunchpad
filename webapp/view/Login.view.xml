@@ -1,0 +1,46 @@
+<mvc:View controllerName="sap.ad.advlauchpad.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page id="loginPage" enableScrolling="false" showHeader="false" title="{i18n>title}">
+        <content>
+            <core:HTML id="html" content="
+                &lt;div id='mainLogin' class='mainLogin'&gt;
+                    &lt;section class='container'&gt;
+                        &lt;div class='box sign_in'&gt;
+                            &lt;h2&gt;Already have an account?&lt;/h2&gt;
+                            &lt;button class='tabs' id='sign_in_btn' &gt;Sign in&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;div class='box sign_up'&gt;
+                            &lt;h2&gt;Don't have an account?&lt;/h2&gt;
+                            &lt;button class='tabs' id='sign_up_btn' &gt;Sign up&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;div class='div_container'&gt;
+                            &lt;div class='div_box sign_in_div'&gt;
+                                &lt;div&gt;
+                                &lt;img class='sing_img_in' src='{Img>/im}/images/daffodilslogo.png' style='width:100%; height:110px; ' /&gt;
+                                
+                                    &lt;h3&gt;Sign in&lt;/h3&gt;
+                                    &lt;input type='text' placeholder='Username' aria-label='Username'&gt;
+                                    &lt;input type='password' placeholder='Password' aria-label='Password'&gt;
+                                    &lt;button  class='primary' &gt;Login&lt;/button&gt;
+                                    &lt;a href='#'&gt;Forgot your Password?&lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class='div_box sign_up_div'&gt;      
+                                &lt;div &gt;
+                                  &lt;img src='{Img>/im}/images/daffodilslogo.png' style='width:100%; height:110px; ' /&gt;
+                                    &lt;h3&gt;Sign up&lt;/h3&gt;
+                                    &lt;input type='text' class='RegisterData' name='UserName' placeholder='Username' aria-label='Username'&gt;
+                                    &lt;input type='email' class='RegisterData' name='Email' placeholder='Email' aria-label='Email'&gt;
+                                    &lt;input type='password' class='RegisterData' name='Password' placeholder='Password' aria-label='Password'&gt;
+                                    &lt;input type='password' class='RegisterData' name='ConfirmPass' placeholder='Confirm Password' aria-label='Confirm Password'&gt;
+                                    &lt;button class='secondary' id='RegisterBtn' &gt;Register&lt;/button&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/section&gt;
+                &lt;/div&gt;
+            " />
+        </content>
+    </Page>
+</mvc:View>

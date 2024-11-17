@@ -1,0 +1,38 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+     xmlns:f="sap.ui.layout.form"
+>
+  <HBox justifyContent="Center" width="100%">
+    <f:SimpleForm
+                                editable="false"
+                                layout="ResponsiveGridLayout"
+                                labelSpanXL="4"
+                                title="Theme Design"
+                                labelSpanL="4"
+                                labelSpanM="4"
+                                labelSpanS="12"
+                                backgroundDesign="Transparent"
+                                adjustLabelSpan="false"
+                                emptySpanXL="1"
+                                emptySpanL="1"
+                                emptySpanM="1"
+                                emptySpanS="0"
+                                columnsXL="1"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"
+                            >
+                                <f:content>
+                                   <RadioButtonGroup buttons="{DesignM>/design}"  columns="1" width="100%" selectedIndex="{SettingDesingM>/index}" class="sapUiMediumMarginBottom" select="radiobtnPress">
+			<RadioButton  text="{DesignM>Name}" />
+			
+		</RadioButtonGroup>
+                                </f:content>
+                            </f:SimpleForm>
+  </HBox>
+                
+                
+              
+</core:FragmentDefinition>

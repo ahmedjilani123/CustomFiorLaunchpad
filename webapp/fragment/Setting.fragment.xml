@@ -1,0 +1,54 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+     xmlns:f="sap.ui.layout.form"
+>
+    <Dialog title="Settings"
+        contentHeight="309px"
+        contentWidth="900px" draggable="true"
+    >
+        <content>
+            <Page showHeader="false" >
+                <l:DynamicSideContent
+                    id="DynamicSideContent"
+                    class="sapUiDSCExplored" 
+                    sideContentFallDown="BelowM"
+                    sideContentPosition="Begin"
+                    containerQuery="true"
+                    
+                    breakpointChanged="handleBreakpointChanged"
+                >
+                 <l:mainContent>
+                 <VBox id="MainContent">
+                <core:Fragment fragmentName="sap.ad.advlauchpad.fragment.UserAccount" type="XML" />
+                 </VBox>
+                <!-- dynamically add fragments -->
+                 </l:mainContent>
+                    <l:sideContent >
+                   
+                     <List items="{MainSetting>/section}">
+                            <StandardListItem type="Active" press="AccountSettingPress"
+                                title="{MainSetting>Name}"
+                                description="{MainSetting>Desc}"
+                                icon="{MainSetting>icon}"
+                                
+                                iconInset="true"
+                            
+                            />
+                             </List>
+                   
+                       
+                      
+                    </l:sideContent>
+                </l:DynamicSideContent>
+            </Page>
+        </content>
+        <beginButton>
+            <Button text="Save" type="Emphasized" press="sapSettingHandlerPress"/>
+        </beginButton>
+        <endButton>
+            <Button text="Cancel" press="CancelAppDialogSettingPress" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

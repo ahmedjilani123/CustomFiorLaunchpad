@@ -1,0 +1,35 @@
+{
+    "Field":[
+        {
+            "icon":"sap-icon://home",
+            "Title":"Home",
+            "Desc":"Central",
+            "Dialog":"Home"
+        },
+        {
+            "icon":"sap-icon://check-availability",
+            "Title":"Apps",
+            "Desc":"View All App",
+            "Dialog":"ViewAll"
+        },
+        {
+            "icon":"sap-icon://retail-store-manager",
+            "Title":"Manage App",
+            "Desc":"Setting Apps",
+            "Dialog":"MasterDetail"
+        },
+        {
+            "icon":"sap-icon://action-settings",
+            "Title":"Setting",
+            "Desc":"profile",
+            "Dialog":"sap.ad.advlauchpad.fragment.Setting"
+        },
+        {
+            "icon":"sap-icon://add-product",
+            "Title":"Add ",
+            "Desc":"Create Application",
+            "Dialog":"sap.ad.advlauchpad.fragment.Addapp"
+        }
+       
+    ]
+}

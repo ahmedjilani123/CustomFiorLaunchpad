@@ -1,0 +1,68 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+     xmlns:f="sap.ui.layout.form"
+>
+  
+                 <Panel headerText="User Name" class="sapUiSmallMargin" width="auto" >
+                 <content>
+                  <f:SimpleForm
+                                editable="false"
+                                layout="ResponsiveGridLayout"
+                                labelSpanXL="4"
+                                labelSpanL="4"
+                                labelSpanM="4"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="1"
+                                emptySpanL="1"
+                                emptySpanM="1"
+                                emptySpanS="0"
+                                columnsXL="1"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"
+                            >
+                                <f:content>
+                                    <Label text="User ID" />
+                                    <Title text="{UserDataM>/userID}" />
+                                    <Label text="Email" />
+                                    <Title text="{UserDataM>/userEmail}" />
+                                    <Label text="Password" />
+                                    <Title text="{UserDataM>/userPass}" />
+                                </f:content>
+                            </f:SimpleForm>
+                            <ToggleButton text="Change Password" pressed="false" press="ToggleBtnPress"></ToggleButton>
+                 </content>
+                 </Panel>
+                  <Panel headerText="Change Password" visible="false" class="sapUiSmallMargin" width="auto">
+                 <content>
+                  <f:SimpleForm
+                                editable="false"
+                                layout="ResponsiveGridLayout"
+                                labelSpanXL="4"
+                                labelSpanL="4"
+                                labelSpanM="4"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="1"
+                                emptySpanL="1"
+                                emptySpanM="1"
+                                emptySpanS="0"
+                                columnsXL="1"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"
+                            >
+                                <f:content>
+                                    <Label text="New Password" />
+                                    <Input type="Password" value="{SettingDesingM>/newPass}" />
+                                    <Label text="Confirm Password" />
+                                    <Input type="Password" value="{SettingDesingM>/conPass}" />
+                                </f:content>
+                            </f:SimpleForm>
+                 </content>
+                 </Panel>
+            
+</core:FragmentDefinition>

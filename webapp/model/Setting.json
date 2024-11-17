@@ -1,0 +1,30 @@
+{
+    "section":[
+        {
+            "Name":"User Account",
+            "Desc":"fioriuser1",
+            "icon":"sap-icon://kpi-managing-my-area",
+            "fragment":"UserAccount",
+            "entity":"abcd"
+        },
+        {
+            "Name":"Appearance",
+            "Desc":"design",
+            "icon":"sap-icon://palette",
+            "fragment":"Appearance",
+            "entity":"abcd"
+        },
+        {
+            "Name":"Home Page",
+            "Desc":"main",
+            "icon":"sap-icon://home",
+            "fragment":"MainPage"
+        },
+        {
+            "Name":"User Activities",
+            "Desc":"client",
+            "icon":"sap-icon://responsive",
+            "fragment":"UserActivite"
+        }
+    ]
+}

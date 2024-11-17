@@ -1,0 +1,25 @@
+{
+    "design":[
+        {
+            "Name":"sap_horizon"
+        },
+        {
+            "Name":"sap_horizon_dark"
+        },
+        {
+            "Name":"sap_fiori_3"
+        },
+        {
+            "Name":"sap_fiori_3_dark"
+        },
+        {
+            "Name":"sap_belize"
+        },
+        {
+            "Name":"sap_bluecrystal"
+        },
+        {
+            "Name":"sap_belize_plus"
+        }
+    ]
+}

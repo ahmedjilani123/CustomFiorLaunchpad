@@ -1,0 +1,107 @@
+<mvc:View
+    xmlns:cssgrid="sap.ui.layout.cssgrid"
+    xmlns:layout="sap.ui.layout"
+    xmlns:f="sap.f"
+    controllerName="sap.ad.advlauchpad.controller.View1"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns="sap.m"
+    xmlns:cards="sap.f.cards"
+>
+    <Page
+        id="page1"
+        enableScrolling="false"
+        showHeader="false"
+        title="{i18n>title}"
+        showFooter="true"
+    >
+        <f:ShellBar homeIcon="{Img>/im}/images/Daffodils.png">
+            <f:profile>
+                <Avatar
+                    initials="AD"
+                    active="true"
+                    press="avtarpress"
+                />
+            </f:profile>
+        </f:ShellBar>
+        <content>
+            <HBox
+                id="Main_ID"
+                class="MainHBOXDiv"
+                width="100%"
+                justifyContent="Center"
+                alignItems="Center"
+                height="210px"
+                wrap="Wrap"
+            >
+                <Title
+                    id="MainHeader"
+                    text=""
+                    titleStyle="H2"
+                />
+            </HBox>
+            <HBox
+                width="auto"
+                justifyContent="Start"
+                class="sapUiLargeMarginBegin sapUiSmallMarginTopBottom"
+            >
+                <Title
+                    text="Apps"
+                    level="H2"
+                />
+            </HBox>
+
+            <l:Grid
+                defaultSpan="XL3 L3 M3 S12"
+                hSpacing="1"
+                class="sapUiSmallMarginBeginEnd"
+                content="{path: 'AppDataM>/app',filters: [{ path: 'appPin',operator: 'EQ',value1: true }]}"
+            >
+                <l:content>
+                    <f:Card>
+                        <f:header>
+                            <cards:Header
+                                title="{AppDataM>appName}"
+                                statusText="Active"
+                                press="CardHandlerPress"
+                            />
+                        </f:header>
+
+                        <f:content>
+                            <FlexBox width="100%">
+                                <CustomListItem
+                                    type="Active"
+                                    press="CardHandlerPress"
+                                >
+                                    <Image
+                                        src="{AppDataM>appImage}"
+                                        width="100%"
+                                        height="150px"
+                                    />
+
+                                    <Text text="{AppDataM>appDesc}" />
+
+                                    <layoutData>
+                                        <FlexItemData minWidth="100%" />
+                                    </layoutData>
+                                </CustomListItem>
+                            </FlexBox>
+                        </f:content>
+                    </f:Card>
+                </l:content>
+            </l:Grid>
+        </content>
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button
+                    type="Emphasized"
+                    text="View All Apps"
+                    press="NavToViewAllHandler"
+                />
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

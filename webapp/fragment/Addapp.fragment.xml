@@ -1,0 +1,70 @@
+<core:FragmentDefinition xmlns:f="sap.ui.layout.form" xmlns="sap.m" 	xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core">
+<Dialog title="Add Application" draggable="true">
+<content>
+<HBox justifyContent="Center" >
+<GenericTile frameType="OneByOne" header="{= ${getAppData>/appName}===undefined ? 'App Name' : ${getAppData>/appName} }" class="sapUiSmallMarginTop">
+<TileContent footer="{= ${getAppData>/appDesc} ===undefined ? 'App Description' : ${getAppData>/appDesc}}" >
+<ImageContent src="{= ${getAppData>/appImage} ===undefined ? 'sap-icon://background' : ${getAppData>/appImage}}" />
+</TileContent>
+
+</GenericTile>
+</HBox>
+
+	<f:SimpleForm 
+			editable="false"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="1"
+			emptySpanL="1"
+			emptySpanM="1"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="App Name" required="true" />
+				<Input value="{getAppData>/appName}"/>
+				<Label text="App Description" required="true" />
+				<Input value="{getAppData>/appDesc}"/>
+				<Label text="App Image" required="true"/>
+					<u:FileUploader
+			 width="100%"
+			name="myFileUpload"
+			uploadUrl="upload/"
+			tooltip="Upload your file to the local server"
+			uploadComplete="handleUploadComplete"
+			change="handleValueChange"
+			typeMissmatch="handleTypeMissmatch"
+			style="Emphasized"
+			fileType="png,jpeg"
+			placeholder="Choose a file for Upload...">
+				<u:parameters>
+					<u:FileUploaderParameter
+						name="Accept-CH"
+						value="Viewport-Width"/>
+					<u:FileUploaderParameter
+						name="Accept-CH"
+						value="Width"/>
+					<u:FileUploaderParameter
+						name="Accept-CH-Lifetime"
+						value="86400"/>
+				</u:parameters>
+			</u:FileUploader>
+				<Label text="App ID" required="true"/>
+				<Input value="{getAppData>/appID}"/>
+			</f:content>
+		</f:SimpleForm>
+</content>
+<beginButton>
+<Button text="Cancel" type="Reject" press="CancelAppDialogPress"></Button>
+</beginButton>
+<endButton>
+<Button text="Submit" type="Emphasized" press="SubmitAppHandlerPress"></Button>
+</endButton>
+</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,222 @@
+{
+  "_version": "1.64.0",
+  "sap.app": {
+    "id": "sap.ad.advlauchpad",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.14.5",
+      "toolsId": "3adf0001-bef4-41f1-bb8c-84472c3ac562"
+    },
+    "dataSources": {
+      "UserData": {
+        "uri": "./model/userData.json",
+        "type": "JSON"
+      },
+      "AppData": {
+        "uri": "./model/appData.json",
+        "type": "JSON"
+      },
+      "ProfileD": {
+        "uri": "./model/profileData.json",
+        "type": "JSON"
+      },
+      "Settings": {
+        "uri": "./model/Setting.json",
+        "type": "JSON"
+      },
+      "Designs": {
+        "uri": "./model/design.json",
+        "type": "JSON"
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "aj_launchpad-display": {
+          "semanticObject": "aj_launchpad",
+          "action": "display",
+          "title": "{{flpTitle}}",
+          "subTitle": "{{flpSubtitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          },
+          "icon": "sap-icon://sales-order"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.124.4",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sap.ad.advlauchpad.i18n.i18n"
+        }
+      },
+      "SettingDesingM": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "getAppData": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "UserDataM": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "UserData"
+      },
+      "AppDataMPage": {
+        "type": "sap.ui.model.json.JSONModel",
+        "settings": {
+          "defaultBindingMode": "TwoWay"
+        }
+      },
+      "DesignM": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "Designs"
+      },
+      "MainSetting": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "Settings"
+      },
+      "AppDataM": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "AppData"
+      },
+      "ProfileDM": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "ProfileD"
+      },
+      "MasterDetailM": {
+        "type": "sap.ui.model.json.JSONModel"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "sap.ad.advlauchpad.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "LoginandRegister",
+          "pattern": "",
+          "target": [
+            "LoginandRegister"
+          ]
+        },
+        {
+          "name": "Home",
+          "pattern": "Home",
+          "target": [
+            "TargetView1"
+          ]
+        },
+        {
+          "name": "ViewAll",
+          "pattern": "All_Apps",
+          "target": [
+            "ViewAllApp"
+          ]
+        },
+        {
+          "name": "MasterDetail",
+          "pattern": "Master_Detail_App",
+          "target": [
+            "MasterDetails"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetView1": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "View1",
+          "viewName": "View1"
+        },
+        "LoginandRegister": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Login",
+          "viewName": "Login"
+        },
+        "ViewAllApp": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "ViewAll",
+          "viewName": "ViewAll"
+        },
+        "MasterDetails": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "MasterDetail",
+          "viewName": "MasterDetail"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "sap.ad.advlauchpad.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "sapadadvlauchpad"
+  }
+}
